@@ -1,8 +1,8 @@
 *** Settings ***
-Library    RequestsLibrary
+Resource    ../resources/keywords.resource
 
 *** Test Cases ***
 Listar Usuarios
-    Create Session    serverest    https://compassuol.serverest.dev
-    ${response}=    GET On Session    serverest    /usuarios
+    Criar Sessao
+    ${response}=    GET Usuarios
     Should Be Equal As Integers    ${response.status_code}    200
