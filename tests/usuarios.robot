@@ -16,3 +16,8 @@ Validar Contrato - Campos
     Criar Sessao
     ${response}=    GET Usuarios
     Dictionary Should Contain Key    ${response.json()}    usuarios
+
+Cenario Positivo - Criar Usuario
+    Criar Sessao
+    ${response}=    Criar Usuario
+    Validar Status Code    ${response}    201
