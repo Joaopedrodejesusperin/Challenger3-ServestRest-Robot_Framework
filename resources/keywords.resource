@@ -1,6 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    String
+Library    Collections
 
 *** Variables ***
 ${BASE_URL}    https://compassuol.serverest.dev
@@ -19,11 +20,29 @@ Validar Status Code
 
 Criar Usuario
     ${email}=    Generate Random String    5    [LETTERS]
+    ${email}=    Set Variable    ${email}@teste.com
+
     ${body}=    Create Dictionary
     ...    nome=Usuario Teste
-    ...    email=${email}@teste.com
+    ...    email=${email}
     ...    password=123456
     ...    administrador=true
 
     ${response}=    POST On Session    serverest    /usuarios    json=${body}
+
+    RETURN    ${response}    ${email}  
+
+Login Usuario
+    [Arguments]    ${email}    ${password}
+
+    ${body}=    Create Dictionary
+    ...    email=${email}
+    ...    password=${password}
+
+    ${response}=    POST On Session
+    ...    serverest
+    ...    /login
+    ...    json=${body}
+    ...    expected_status=any
+
     RETURN    ${response}

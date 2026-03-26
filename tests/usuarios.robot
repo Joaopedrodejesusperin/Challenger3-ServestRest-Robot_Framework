@@ -19,5 +19,16 @@ Validar Contrato - Campos
 
 Cenario Positivo - Criar Usuario
     Criar Sessao
-    ${response}=    Criar Usuario
+    ${response}    ${email}=    Criar Usuario
     Validar Status Code    ${response}    201
+
+Cenario Positivo - Login Valido
+    Criar Sessao
+    ${response}    ${email}=    Criar Usuario
+    ${res}=    Login Usuario    ${email}    123456
+    Validar Status Code    ${res}    200
+
+Cenario Negativo - Login Invalido
+    Criar Sessao
+    ${response}=    Login Usuario    email@invalido.com    senhaerrada
+    Validar Status Code    ${response}    401
