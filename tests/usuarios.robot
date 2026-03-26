@@ -5,4 +5,4 @@ Resource    ../resources/keywords.resource
 Listar Usuarios
     Criar Sessao
     ${response}=    GET Usuarios
-    Should Be Equal As Integers    ${response.status_code}    200
+    Validar Status Code    ${response}    200

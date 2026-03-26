@@ -11,3 +11,7 @@ Criar Sessao
 GET Usuarios
     ${response}=    GET On Session    serverest    /usuarios
     RETURN    ${response}
+
+Validar Status Code
+    [Arguments]    ${response}    ${status}
+    Should Be Equal As Integers    ${response.status_code}    ${status}
