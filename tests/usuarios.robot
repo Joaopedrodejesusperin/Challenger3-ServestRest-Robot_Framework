@@ -20,7 +20,6 @@ Cenario Positivo - Criar Usuario
 Cenario Negativo - Criar Usuario Duplicado
     [Tags]    CT-USER-04
     ${response}    ${email}=    Criar Usuario
-
     ${body}=    Create Dictionary
     ...    nome=Usuario Teste
     ...    email=${email}
