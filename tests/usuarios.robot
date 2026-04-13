@@ -26,7 +26,6 @@ Cenario Negativo - Criar Usuario Duplicado
     ...    email=${email}
     ...    password=123456
     ...    administrador=true
-
     ${response2}=    POST On Session    serverest    /usuarios    json=${body}    expected_status=any
 
     Validar Status Code    ${response2}    400
