@@ -71,8 +71,10 @@ README.md
 ## Instalação
 pip install robotframework
 pip install robotframework-requests
+
 ### Execução dos Testes
 py -3.11 -m robot -d results tests/
+
 ## Evidências de Execução
 
 Os relatórios são gerados automaticamente na pasta /results:
@@ -80,12 +82,15 @@ Os relatórios são gerados automaticamente na pasta /results:
 log.html
 report.html
 output.xml
+
 ## Funcionalidades Testadas
+
 ### Login
 Login válido
 Login inválido
 Login sem senha
 Validação de token
+
 ### Usuários
 Listar usuários
 Criar usuário
@@ -93,6 +98,7 @@ Usuário duplicado
 Email inválido
 Validação de contrato
 Rota inválida (bug identificado)
+
 ### Bugs Identificados
 BUG-01 — Status Code incorreto
 Endpoint: /rota-nao-existe
@@ -102,6 +108,7 @@ Esperado: 404
 Impacto:
 
 Inconsistência com padrão REST
+
 ## Uso de GenAI
 
 A IA foi utilizada para:
@@ -115,6 +122,7 @@ Sugerir validações
 
 Validados manualmente
 Ajustados conforme comportamento real da API
+
 ## Prompt Log disponível no repositório
 
 ## Rastreabilidade
@@ -127,6 +135,7 @@ CT-LOGIN-01
 CT-USER-03
 ## Versionamento
 Branch principal: main
+Branch de desenvolvimento: feature/API de testes
 Branch de desenvolvimento: feature/challenge04-genai
 
 ### Padrão de commits:
